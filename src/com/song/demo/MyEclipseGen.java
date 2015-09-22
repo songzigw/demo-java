@@ -1,4 +1,4 @@
-package com.song;
+package com.song.demo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
