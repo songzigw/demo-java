@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2016, zhangsong<songm.cn>.
+ * Copyright (c) 2016, zhangsong<songm.cn>.
  *
  */
 
@@ -17,7 +17,9 @@ package com.song.demo.reflection;
  * 子类对象与父类做instanceof运算，结果为ture；
  * 其他情况下返回false。<br/>
  * 
- * @author zhangsong
+ * @author  zhangsong
+ * @since   1.0
+ * @version 1.0
  *
  */
 public class InstanceOf {
