@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016, zhangsong<songm.cn>.
+ * Copyright (c) 2016, zhangsong <songm.cn>.
  *
  */
 
