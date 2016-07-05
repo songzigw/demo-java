@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2016, zhangsong <songm.cn>.
+ *
+ */
+
 package com.song.demo.net;
 
 import java.io.IOException;
@@ -12,7 +17,15 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.params.HttpMethodParams;
 
-public class ImageUpdate {
+/**
+ * Apache commons-httpclient库的使用方法
+ *
+ * @author  zhangsong
+ * @since   1.0
+ * @version 1.0
+ * 
+ */
+public class CommonsHttp {
 
 	public static void main(String[] args) {
 		/*
