@@ -16,14 +16,14 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * HTTP请求
+ * HTTP Client
  * 
  * @author zhangsong
  * @since 1.0, 2016-7-4
  * @version 1.0
  *
  */
-public class HttpRequest {
+public class HttpClient {
 
     private static final int CONNECT_TIMEOUT = 5000;
     private static final int READ_TIMEOUT = 10000;
