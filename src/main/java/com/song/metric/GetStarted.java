@@ -1,9 +1,10 @@
 package com.song.metric;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import com.codahale.metrics.ConsoleReporter;
-import com.codahale.metrics.Meter;
+import com.codahale.metrics.Histogram;
 import com.codahale.metrics.MetricRegistry;
 
 public class GetStarted {
@@ -12,9 +13,20 @@ public class GetStarted {
 
     public static void main(String args[]) {
         startReport();
-        Meter requests = reg.meter("requests");
-        requests.mark(2);
-        wait5Seconds();
+        // Meter requests = reg.meter("requests");
+        // requests.mark(2);
+        // wait5Seconds();
+
+        Histogram h = reg.histogram("requests");
+        Random rand = new Random();
+        while (true) {
+            h.update((int) (rand.nextDouble() * 100));
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     static void startReport() {
@@ -22,13 +34,7 @@ public class GetStarted {
                 .convertRatesTo(TimeUnit.SECONDS)
                 .convertDurationsTo(TimeUnit.MILLISECONDS).build();
 
-        // CsvReporter reporter = CsvReporter.forRegistry(reg)
-        // .formatFor(Locale.US)
-        // .convertRatesTo(TimeUnit.SECONDS)
-        // .convertDurationsTo(TimeUnit.MILLISECONDS)
-        // .build(new File(".\\data\\"));
-
-        reporter.start(1, TimeUnit.SECONDS);
+        reporter.start(3, TimeUnit.SECONDS);
         reporter.report();
     }
 
