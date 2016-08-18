@@ -1,6 +1,7 @@
 package com.song.mq;
 
 import java.util.Date;
+import java.util.EventObject;
 
 /**
  * 队列消息
@@ -8,14 +9,23 @@ import java.util.Date;
  * @author songzigw
  *
  */
-public class MQMessage {
+public class MQMessage extends EventObject {
+
+    private static final long serialVersionUID = 2962282464078178557L;
+
     private String id;
     private String topic;
     private byte[] data;
     private Date createTime;
 
     public MQMessage() {
+        super(null);
         createTime = new Date();
+    }
+
+    @Override
+    public String getSource() {
+        return topic;
     }
 
     public String getId() {
