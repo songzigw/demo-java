@@ -8,7 +8,9 @@ import java.rmi.RemoteException;
 public class RmiClient {
 
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-        String url = "rmi://localhost:8888/com.song.remoting.HelloService";
+        int port = 8888;
+        String url = String.format("rim://%s:%d/%s", "localhost", port,
+                "com.song.remoting.HelloService");
         HelloService helloService = (HelloService) Naming.lookup(url);
         System.out.println(helloService.syayHello("Zhangsong"));
     }
