@@ -5,10 +5,11 @@ import java.beans.PropertyDescriptor;
 import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.beanutils.DynaBean;
 import org.apache.commons.beanutils.PropertyUtilsBean;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PropertyUtils {
-    private static final Logger log = Logger.getLogger(PropertyUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(PropertyUtils.class);
 
     public static final void copyProperties(Object dest, Object orig) {
         PropertyUtilsBean propUtil = BeanUtilsBean.getInstance()
